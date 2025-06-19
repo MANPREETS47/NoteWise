@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Only style the scrollbar for .content-textarea */
+.content-textarea::-webkit-scrollbar {
+  width: 8px;
+  background: #fff;
+}
+
+.content-textarea::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 4px;
+}
+
+.content-textarea::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.text-primary{
+  color: #1F2937;
+}
+
+.text-secondary{
+  color: #6B7280
+}
+
+/* index.css or App.css */
+html, body {
+  overflow: hidden;
+}
