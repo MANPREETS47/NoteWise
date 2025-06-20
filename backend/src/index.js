@@ -5,6 +5,7 @@ import noteroutes from "./routes/note.routes.js";
 import {connectDB} from "./lib/db.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import path from "path";
 
 const app = express();
 dotenv.config();
@@ -17,9 +18,19 @@ app.use(cors({
     credentials: true
 }))
 
+const __dirname = path.resolve();
+
 
 app.use("/api/auth", authroutes);
 app.use("/api/notes", noteroutes);
+
+if(process.env.NODE_ENV==="production"){
+    app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+    app.get("*", (req,res) => {
+        res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"))
+    })
+}
 
 
 app.listen(2000, ()=>{
