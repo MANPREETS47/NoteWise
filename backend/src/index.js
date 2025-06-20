@@ -6,6 +6,7 @@ import {connectDB} from "./lib/db.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import path from "path";
+import { fileURLToPath } from 'url';
 
 const app = express();
 dotenv.config();
@@ -13,12 +14,17 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.resolve();
+
+
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: process.env.FRONTEND_URL || "http://localhost:5173",
     credentials: true
 }))
 
-const __dirname = path.resolve();
+
 
 
 app.use("/api/auth", authroutes);
@@ -32,8 +38,8 @@ if(process.env.NODE_ENV==="production"){
     })
 }
 
-
-app.listen(2000, ()=>{
+const PORT = process.env.PORT || 2000;
+app.listen(PORT, ()=>{
     console.log("Server is running on port 2000");
     connectDB();
 });
