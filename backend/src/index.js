@@ -20,7 +20,7 @@ const __dirname = path.resolve();
 
 
 app.use(cors({
-    origin: "*",
+    origin: "https://note-wise-ochre.vercel.app",
     credentials: true
 }))
 
