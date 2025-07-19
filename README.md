@@ -57,8 +57,18 @@ Optimized for deployment on platforms like Render, Vercel, or Netlify.
 
 ## 🔍 How to Run Locally
 
-### 1. Clone the repository
+### 1.Setup backend
 
 ```bash
-git clone https://github.com/your-username/notewise.git
-cd notewise
+cd backend
+npm install
+# Create a .env file and add your MongoDB URI, JWT_SECRET, and Google API keys
+npm run dev
+```
+### 2. Setup frontend
+
+```bash
+cd ../frontend
+npm install
+npm run dev
+
