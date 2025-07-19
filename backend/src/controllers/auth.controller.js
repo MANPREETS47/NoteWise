@@ -26,8 +26,8 @@ export const signup = async (req, res) => {
       password:hashedPassword,
     });
     if (newuser) {
-      const token = generateToken(newuser._id);
       await newuser.save();
+      const token = generateToken(newuser._id);
       res.status(201).json({
         token,
         _id: newuser._id,
@@ -71,7 +71,7 @@ export const login = async (req, res) => {
 
 export const logout = async (req, res) => {
   try{
-    res.cookie("jwt", '', {maxAge:0})
+    // res.cookie("jwt", '', {maxAge:0})
     res.status(200).json({ message: "Logged out successfully" });
   }catch (error) {
     console.error("Error during logout:", error);
