@@ -71,4 +71,7 @@ npm run dev
 cd ../frontend
 npm install
 npm run dev
+```
+🌐 Live Demo
+https://note-wise-sable.vercel.app
 
