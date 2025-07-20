@@ -33,9 +33,6 @@ Built using **Express.js** with complete separation of concerns.
 ### 💾 MongoDB Integration  
 For storing user data and notes with high performance.
 
-### ☁️ Deployment Ready  
-Optimized for deployment on platforms like Render, Vercel, or Netlify.
-
 ---
 
 ## 🛠️ Tech Stack
@@ -44,7 +41,7 @@ Optimized for deployment on platforms like Render, Vercel, or Netlify.
 - React  
 - Tailwind CSS + DaisyUI  
 - Axios  
-- Zustand (or Context API, if used)
+- Zustand
 
 ### 🧠 Backend  
 - Node.js  
