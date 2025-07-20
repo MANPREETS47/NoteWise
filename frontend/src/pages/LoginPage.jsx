@@ -114,7 +114,7 @@ const LoginPage = () => {
                   }}
                 />
                 <button
-                  className="bg-[#4F46E5] rounded-2xl mb-5 p-2 transition delay-5 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+                  className="bg-[#4F46E5] rounded-2xl mb-5 p-2 transition delay-5 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 flex items-center justify-center"
                   type="submit"
                   disabled={islogingin}
                 >
