@@ -19,7 +19,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       <div className="fixed bottom-8 right-8 z-10 rounded-full p-3 group overflow-hidden">
-        <span className="absolute inset-0 bg-red-500 rounded-full -z-10 transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100"></span>
+        <span className="absolute inset-0 bg-blue-500 rounded-full -z-10 transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100"></span>
         <Link className="cursor-pointer relative z-10" to="/notes">
           <NotebookPen className="text-[#F43F5E]" size={50} />
         </Link>
