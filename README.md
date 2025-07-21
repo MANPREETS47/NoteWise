@@ -62,7 +62,7 @@ cd notewise
 
 ```
 
-### 1.Setup backend
+### 📂 Setup Backend
 
 ```bash
 cd backend
@@ -70,7 +70,7 @@ npm install
 # Create a .env file and add your MongoDB URI, JWT_SECRET, and Google API keys
 npm run dev
 ```
-### 2. Setup frontend
+### 💻 Setup Frontend
 
 ```bash
 cd ../frontend
