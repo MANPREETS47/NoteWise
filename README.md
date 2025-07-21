@@ -54,6 +54,14 @@ For storing user data and notes with high performance.
 
 ## 🔍 How to Run Locally
 
+## 🔁 Clone the repository
+
+```bash
+git clone https://github.com/MANPREETS47/notewise.git
+cd notewise
+
+```
+
 ### 1.Setup backend
 
 ```bash
