@@ -3,6 +3,7 @@ import { Check, Copy, Loader2, Trash2 } from "lucide-react";
 import { useNoteStore } from "../store/usenotestore";
 import { Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import { Volume2 } from "lucide-react";
 
 const UpdateNotePage = () => {
   const [NoteData, setNoteData] = useState({
