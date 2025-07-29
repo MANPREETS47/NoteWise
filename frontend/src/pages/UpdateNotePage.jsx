@@ -53,6 +53,17 @@ const UpdateNotePage = () => {
     e.preventDefault();
     await summarizenote(NoteData);
   };
+  const speakText = (text) => {
+    if (!text) {
+      toast.error("Nothing to read.");
+      return;
+    }
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = 1; // Optional: control speed (0.1 to 10)
+    utterance.pitch = 1; // Optional: control pitch (0 to 2)
+    window.speechSynthesis.speak(utterance);
+  };
+
   return (
     <div className="relative h-screen  flex flex-col">
       <header className="flex justify-between pr-6 pl-6 pt-4 pb-4">
@@ -75,6 +86,13 @@ const UpdateNotePage = () => {
           <div className="p-2 hover:scale-110 transition">
             <Check onClick={handlenote} size={30} />
           </div>
+          <button
+            className="p-2 hover:scale-110 transition"
+            onClick={() => speakText(NoteData.content)}
+            title="Read Note"
+          >
+            <Volume2 size={24} />
+          </button>
         </div>
       </header>
       <textarea
