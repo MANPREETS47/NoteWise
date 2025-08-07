@@ -24,7 +24,7 @@ const HomePage = () => {
           <NotebookPen className="text-[#F43F5E]" size={50} />
         </Link>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 xl:flex xl:flex-row xl:flex-wrap gap-5 pr-10 overflow-auto h-[90vh] w-full content-textarea">
+      <div className="m-5 grid grid-cols-2 md:grid-cols-3 xl:flex xl:flex-row xl:flex-wrap gap-5 pr-10 overflow-auto h-[90vh] w-full content-textarea">
         {Notes.map((note) => (
           <div
             key={note._id}
