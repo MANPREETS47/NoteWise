@@ -18,7 +18,7 @@ const LoginPage = () => {
     login(Form);
   };
   return (
-    <div className="lg:grid grid-cols-2">
+    <div className="p-5 lg:grid grid-cols-2">
       {/* left side */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
@@ -50,7 +50,7 @@ const LoginPage = () => {
                   value={Form.email}
                   onChange={(e) => setForm({ ...Form, email: e.target.value })}
                   sx={{
-                    width: "50vh",
+                    width: "30vh lg:50vh",
                     height: "5vh",
                     mb: "25px",
                     input: {
@@ -85,34 +85,40 @@ const LoginPage = () => {
                   onChange={(e) =>
                     setForm({ ...Form, password: e.target.value })
                   }
-                  sx={{
+                  sx={(theme) => ({
                     width: "50vh",
                     height: "5vh",
                     mb: "25px",
                     input: {
-                      color: "#1F2937", // White text
+                      color: "#1F2937",
                       padding: "10px",
                     },
                     label: {
-                      color: "#B0BEC5", // Secondary text color
+                      color: "#B0BEC5",
                     },
                     "& label.Mui-focused": {
-                      color: "#00B8D4", // Cyan highlight
+                      color: "#00B8D4",
                     },
                     "& .MuiOutlinedInput-root": {
                       borderRadius: "10px",
                       "& fieldset": {
-                        borderColor: "#333", // Subtle border
+                        borderColor: "#333",
                       },
                       "&:hover fieldset": {
-                        borderColor: "#00E5FF", // Neon blue hover
+                        borderColor: "#00E5FF",
                       },
                       "&.Mui-focused fieldset": {
-                        borderColor: "#00B8D4", // Cyan on focus
+                        borderColor: "#00B8D4",
                       },
                     },
-                  }}
+
+                    // ✅ Responsive width for smaller screens
+                    [theme.breakpoints.down("sm")]: {
+                      width: "80vw",
+                    },
+                  })}
                 />
+
                 <button
                   className="bg-[#4F46E5] rounded-2xl mb-5 p-2 transition delay-5 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 flex items-center justify-center"
                   type="submit"
@@ -143,7 +149,12 @@ const LoginPage = () => {
       </motion.div>
       {/* right side */}
       <div className="hidden lg:flex items-center justify-center">
-        <Lottie animationData={loginAnimation} loop autoplay className="w-4/5 h-4/5" />
+        <Lottie
+          animationData={loginAnimation}
+          loop
+          autoplay
+          className="w-4/5 h-4/5"
+        />
       </div>
     </div>
   );

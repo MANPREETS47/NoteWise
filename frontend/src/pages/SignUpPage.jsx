@@ -32,7 +32,7 @@ const SignUpPage = () => {
     if (success == true) signup(Form);
   };
   return (
-    <div className="lg:grid grid-cols-2">
+    <div className="p-5 lg:grid grid-cols-2">
       {/* left side */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
@@ -65,7 +65,7 @@ const SignUpPage = () => {
                   onChange={(e) =>
                     setForm({ ...Form, username: e.target.value })
                   }
-                  sx={{
+                  sx={(theme) => ({
                     width: "50vh",
                     height: "5vh",
                     mb: "25px",
@@ -91,7 +91,10 @@ const SignUpPage = () => {
                         borderColor: "#00B8D4", // Cyan on focus
                       },
                     },
-                  }}
+                      [theme.breakpoints.down("sm")]: {
+                      width: "80vw",
+                    }
+                  })}
                 />
                 <TextField
                   id="outlined-basic"
@@ -99,8 +102,8 @@ const SignUpPage = () => {
                   variant="outlined"
                   value={Form.email}
                   onChange={(e) => setForm({ ...Form, email: e.target.value })}
-                  sx={{
-                    width: "50vh",
+                  sx={(theme) => ({
+                    width: "30vh lg:50vh",
                     height: "5vh",
                     mb: "25px",
                     input: {
@@ -125,7 +128,10 @@ const SignUpPage = () => {
                         borderColor: "#00B8D4", // Cyan on focus
                       },
                     },
-                  }}
+                      [theme.breakpoints.down("sm")]: {
+                      width: "80vw",
+                    },
+                  })}
                 />
                 <TextField
                   id="outlined-basic"
@@ -135,7 +141,7 @@ const SignUpPage = () => {
                   onChange={(e) =>
                     setForm({ ...Form, password: e.target.value })
                   }
-                  sx={{
+                  sx={(theme) => ({
                     width: "50vh",
                     height: "5vh",
                     mb: "25px",
@@ -161,7 +167,10 @@ const SignUpPage = () => {
                         borderColor: "#00B8D4", // Cyan on focus
                       },
                     },
-                  }}
+                      [theme.breakpoints.down("sm")]: {
+                      width: "80vw",
+                    },
+                  })}
                 />
                 <button
                   type="submit"
