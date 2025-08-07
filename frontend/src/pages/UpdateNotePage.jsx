@@ -70,7 +70,8 @@ const UpdateNotePage = () => {
       <header className="flex justify-between pr-6 pl-6 pt-4 pb-4">
         <div className="text-2xl p-2 ">Note</div>
         <div className="cursor-pointer flex pr-5 pl-5 gap-10">
-          <button
+          <div>
+            <button
             onClick={(e) => {
               handlenote3(e);
               setVisible(true);
@@ -80,7 +81,9 @@ const UpdateNotePage = () => {
             className="flex items-center justify-center w-32 shadow-xl transition hover:scale-110 bg-[#4F46E5] p-2 rounded-xl"
           >
             {issummarizing ? <Loader2 /> : "Summarize"}
-          </button>
+            </button>
+          </div>
+          <div className="md:flex fixed z-50 bottom-4 right-4 flex bg-blue-500 rounded-full px-5">
           <div className="p-2 hover:scale-110 transition">
             <Trash2 onClick={handlenote2} size={30} />
           </div>
@@ -94,6 +97,7 @@ const UpdateNotePage = () => {
           >
             <Volume2 size={24} />
           </button>
+          </div>
         </div>
       </header>
       <textarea

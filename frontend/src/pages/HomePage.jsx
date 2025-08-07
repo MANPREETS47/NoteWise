@@ -24,11 +24,36 @@ const HomePage = () => {
           <NotebookPen className="text-[#F43F5E]" size={50} />
         </Link>
       </div>
-      <div className="m-5 grid grid-cols-2 md:grid-cols-3 xl:flex xl:flex-row xl:flex-wrap gap-5 pr-10 overflow-auto h-[90vh] w-full content-textarea">
+      <div
+        className="
+  grid 
+    grid-cols-2 
+    sm:grid-cols-2 
+    md:grid-cols-3 
+    xl:flex xl:flex-row xl:flex-wrap 
+    gap-4 sm:gap-6 md:gap-10 xl:gap-20 
+    pr-2 sm:pr-4 md:pr-10 
+    overflow-auto 
+    h-[90vh] w-full content-textarea
+"
+      >
         {Notes.map((note) => (
           <div
             key={note._id}
-            className="shadow-xl w-48 h-48 border rounded-2xl overflow-hidden m-5 p-5 cursor-pointer bg-[#FFFFFF] hover:scale-105 transition shrink-0 "
+            className="shadow-xl 
+        w-full 
+        max-w-[180px] 
+        h-48 
+        border 
+        rounded-2xl 
+        overflow-hidden 
+        p-4 
+        cursor-pointer 
+        bg-[#FFFFFF] 
+        hover:scale-105 
+        transition 
+        shrink-0 
+        break-words md:m-5"
             onClick={() => {
               setselectednote(note);
               Navigate(`/updatenote`);
