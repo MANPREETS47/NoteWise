@@ -32,7 +32,7 @@ const SignUpPage = () => {
     if (success == true) signup(Form);
   };
   return (
-    <div className="sm:grid sm:grid-cols-2">
+    <div className="lg:grid grid-cols-2">
       {/* left side */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
