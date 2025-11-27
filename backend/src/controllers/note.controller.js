@@ -94,7 +94,7 @@ export const summarizenote = async (req, res) => {
     if(!note.content || note.content.trim() === ""){
         return res.status(400).json({ message: "Note content is empty"});
     }
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const result = await model.generateContent(`Summarize this note:\n\n${note.content}`);
     const response = await result.response;
