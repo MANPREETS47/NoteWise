@@ -97,7 +97,7 @@ export const summarizenote = async (req, res) => {
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const result = await model.generateContent(`Summarize this note:\n\n${note.content}`);
-    const response = await result.response;
+    const response =  result.response;
     const summary = response.text();
 
     return res.status(200).json({
