@@ -1,5 +1,4 @@
 import Note from '../models/note.model.js';
-import axios from 'axios';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export const createnote = async (req, res) => {
